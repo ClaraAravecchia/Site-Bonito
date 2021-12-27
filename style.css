@@ -9,8 +9,8 @@
 }
 
 body {
-  color: black;
-  background-color: white;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   margin: 0;
   padding: 0;
 }
@@ -28,7 +28,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 main {
-  margin-left: 5rem;
+  margin-left: 15rem;
+  margin-right: 5rem;
   padding: 1rem;
 }
 
@@ -37,6 +38,7 @@ main {
   background-color: var(--bg-primary);
   transition: width 600ms ease;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .navbar-nav {
@@ -51,26 +53,36 @@ main {
 
 .nav-item {
   width: 100%;
+  padding-bottom: 1.5rem;
 }
 
 .nav-item:last-child {
   margin-top: auto;
 }
 
+.nav-item:hover{
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  height: 100%;
+  padding-bottom: 2.5rem;
+  width: 100%;
+}
+
 .nav-link {
   display: flex;
   align-items: center;
-  height: 5rem;
+  height: 100%;
   color: var(--text-primary);
   text-decoration: none;
   filter: grayscale(100%) opacity(0.7);
   transition: var(--transition-speed);
 }
 
-.nav-link:hover {
-  filter: grayscale(0%) opacity(1);
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
+.nav-item p{
+  width: auto;
+  color: var(--text-primary);
+  font-weight: bold;
 }
 
 .link-text {
@@ -82,14 +94,7 @@ main {
   width: 2rem;
   min-width: 2rem;
   margin: 0 1.5rem;
-}
-
-.fa-primary {
-  color: #ff7eee;
-}
-
-.fa-secondary {
-  color: #df49a6;
+  padding-top: 2rem;
 }
 
 .fa-primary,
@@ -126,7 +131,7 @@ main {
   transform: rotate(-180deg);
 }
 
-/* Small screens */
+/* Small screens 
 @media only screen and (max-width: 600px) {
   .navbar {
     bottom: 0;
@@ -150,21 +155,26 @@ main {
     margin: 0;
   }
 }
-
+*/
 /* Large screens */
 @media only screen and (min-width: 600px) {
   .navbar {
     top: 0;
-    width: 5rem;
+    width: 10rem;
     height: 100vh;
   }
 
   .navbar:hover {
-    width: 16rem;
+    width: 20rem;
   }
 
   .navbar:hover .link-text {
-    display: inline;
+    display: block;
+  }
+  
+  .navbar:hover a{
+    display: block;
+    padding-bottom: 15px;
   }
 
   .navbar:hover .logo svg
@@ -188,12 +198,12 @@ main {
 .light {
   --text-primary: #1f1f1f;
   --text-secondary: #000000;
-  --bg-primary: #ffffff;
-  --bg-secondary: #e4e4e4;
+  --bg-primary: white;
+  --bg-secondary: #bfbebb;
 }
 
 .solar {
-  --text-primary: #576e75;
+  --text-primary: #42403a;
   --text-secondary: #35535c;
   --bg-primary: #fdf6e3;
   --bg-secondary: #f5e5b8;
